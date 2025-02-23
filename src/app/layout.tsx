@@ -71,7 +71,7 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJp.variable} ${zenKakuGothicNew.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-white text-gray-900 font-noto">
+      <body className="min-h-screen flex flex-col text-gray-900 font-noto">
         {children}
       </body>
     </html>

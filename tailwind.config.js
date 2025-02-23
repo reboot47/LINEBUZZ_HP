@@ -9,19 +9,23 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'var(--primary)',
-          light: 'var(--primary-light)',
-          dark: 'var(--primary-dark)',
+          DEFAULT: '#2563eb',
+          light: '#3b82f6',
+          dark: '#1d4ed8',
         },
         secondary: {
-          DEFAULT: 'var(--secondary)',
-          light: 'var(--secondary-light)',
-          dark: 'var(--secondary-dark)',
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          dark: '#059669',
         },
       },
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)', 'sans-serif'],
         heading: ['var(--font-zen-kaku-gothic-new)', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       container: {
         center: true,
