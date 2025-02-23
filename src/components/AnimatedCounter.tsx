@@ -1,37 +1,32 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 interface AnimatedCounterProps {
-  from: number;
-  to: number;
-  duration?: number;
-  delay?: number;
+  value: number;
   suffix?: string;
 }
 
-const AnimatedCounter = ({
-  from,
-  to,
-  duration = 2,
-  delay = 0,
-  suffix = ''
-}: AnimatedCounterProps) => {
-  const count = useMotionValue(from);
-  const rounded = useTransform(count, latest => Math.round(latest));
+const AnimatedCounter = ({ value, suffix = '' }: AnimatedCounterProps) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 50,
+    stiffness: 100,
+  });
 
   useEffect(() => {
-    const controls = animate(count, to, {
-      duration: duration,
-      delay: delay,
-      ease: "easeOut",
+    motionValue.set(value);
+    const unsubscribe = springValue.on('change', (latest) => {
+      setDisplayValue(Math.round(latest));
     });
-
-    return controls.stop;
-  }, [count, to, duration, delay]);
+    return () => unsubscribe();
+  }, [motionValue, springValue, value]);
 
   return (
     <motion.span className="tabular-nums">
-      {rounded}
+      {displayValue}
       {suffix}
     </motion.span>
   );
