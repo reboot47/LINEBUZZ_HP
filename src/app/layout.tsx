@@ -17,8 +17,8 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | LINEBUZZ',
-    default: 'LINEBUZZ - デジタルの未来を創造する',
+    template: '%s | 株式会社LINEBUZZ',
+    default: '株式会社LINEBUZZ - 革新的なテクノロジーソリューション',
   },
   description: '株式会社LINEBUZZは、最新のテクノロジーとクリエイティブな発想で、ビジネスの可能性を広げます。',
   keywords: ['LINEBUZZ', 'テクノロジー', 'デジタル', 'イノベーション', 'ビジネスソリューション'],
