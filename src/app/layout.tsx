@@ -16,11 +16,27 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
 });
 
 export const metadata: Metadata = {
-  title: "株式会社LINEBUZZ - ビジネスを加速するソリューション",
-  description: "株式会社LINEBUZZは、最新のテクノロジーを活用したビジネスソリューションを提供し、お客様のビジネスの成長と成功をサポートします。",
-  keywords: "LINEBUZZ, ビジネスソリューション, テクノロジー, イノベーション, デジタルトランスフォーメーション",
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
+  title: {
+    template: '%s | LINEBUZZ',
+    default: 'LINEBUZZ - デジタルの未来を創造する',
+  },
+  description: '株式会社LINEBUZZは、最新のテクノロジーとクリエイティブな発想で、ビジネスの可能性を広げます。',
+  keywords: ['LINEBUZZ', 'テクノロジー', 'デジタル', 'イノベーション', 'ビジネスソリューション'],
+  manifest: "/manifest.json",
+  themeColor: "#ffffff",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "ja_JP",
@@ -43,18 +59,6 @@ export const metadata: Metadata = {
     description: "株式会社LINEBUZZは、最新のテクノロジーを活用したビジネスソリューションを提供し、お客様のビジネスの成長と成功をサポートします。",
     images: ["/og-image.jpg"],
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-icon.png" },
-    ],
-  },
-  manifest: "/manifest.json",
-  themeColor: "#ffffff",
-  backgroundColor: "#ffffff",
 };
 
 export default function RootLayout({
