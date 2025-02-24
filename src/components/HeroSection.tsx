@@ -77,13 +77,9 @@ const HeroSection = () => {
           >
             <div className="relative w-full aspect-square max-w-2xl mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse" />
-              <Image
-                src="/hero-image.png"
-                alt="LINEBUZZ Technology"
-                fill
-                className="object-contain z-10"
-                priority
-              />
+              <div className="relative z-10 w-full h-full flex items-center justify-center">
+                <div className="text-6xl font-bold text-primary">LINEBUZZ</div>
+              </div>
             </div>
 
             {/* Floating Elements */}
