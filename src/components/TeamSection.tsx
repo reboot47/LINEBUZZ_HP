@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const teamMembers = [
   {
@@ -63,13 +62,18 @@ const TeamSection = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-                <Image
-                  src={member.imageUrl}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                <svg
+                  className="w-24 h-24 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20zM8 11a4 4 0 118 0 4 4 0 01-8 0zm10 7.32A8 8 0 016 18.32V19a1 1 0 001 1h10a1 1 0 001-1v-.68z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {member.name}
